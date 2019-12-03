@@ -1,1 +1,1 @@
-web: java -jar build/libs/app-name-1.0-SNAPSHOT.jar
+web: java -jar build/libs/FolhaDePagamento-1.0-SNAPSHOT.jar

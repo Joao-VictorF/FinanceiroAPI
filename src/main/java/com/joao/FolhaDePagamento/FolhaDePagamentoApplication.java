@@ -26,14 +26,10 @@ public class FolhaDePagamentoApplication {
 		SpringApplication.run(FolhaDePagamentoApplication.class, args);
 	}
 	@Bean
-	
 	CommandLineRunner runner() {
 		return args -> {
-			// Save demo data to database
-			
 			Folha_Pagamento folha1 = new Folha_Pagamento(11, 2019);
 			Frepository.save(folha1);
-			
 			
 			Colaborador colab1 = new Colaborador("João Victor", "Rua X", "(85) 98824-2372", "Lagoa Redonda",
 			"11111-11", "xxx.xxx.xxx-xx", "Desenvolvedor", (double) 1200);
@@ -51,7 +47,7 @@ public class FolhaDePagamentoApplication {
 			Crepository.save(colab3);
 			
 			Movimento m1 = new Movimento("Falta", (double) 500, "D");
-			m1.setColaborador(colab1);
+			m1.setColaborador(colab2);
 			m1.setFolha(folha1);
 			Mrepository.save(m1);
 			
@@ -60,6 +56,6 @@ public class FolhaDePagamentoApplication {
 			m2.setFolha(folha1);
 			Mrepository.save(m2);
 		};
+	
 	}
-
 }
