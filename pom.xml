@@ -10,13 +10,14 @@
 	</parent>
 	<groupId>com.joao</groupId>
 	<artifactId>FolhaDePagamento</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0-SNAPSHOT</version>
 	<name>FolhaDePagamento</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Api para controle das folhas de pagamentos de uma empresa</description>
 
 	<properties>
 		<java.version>1.8</java.version>
-		<start-class>com.joao.FolhaDePagamento.FolhaDePagamentoApplication</start-class>
+		<!-- <start-class>com.joao.FolhaDePagamento.FolhaDePagamentoApplication</start-class> -->
+		
 	</properties>
 
 	<dependencies>
