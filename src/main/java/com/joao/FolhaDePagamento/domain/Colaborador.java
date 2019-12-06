@@ -27,7 +27,7 @@ public class Colaborador {
 	@GenericGenerator(name = "increment", strategy = "increment")
 	private long id;
 	private String nome, endereco, telefone, bairro, cep, cpf, cargo;
-	private Double salario;
+	private float salario;
 	
 	 
 	@OneToMany(cascade = CascadeType.ALL, mappedBy="colaborador")
@@ -42,7 +42,7 @@ public class Colaborador {
 	public Colaborador () {}
 	
 	public Colaborador(String nome, String endereco, String telefone, String bairro, String cep,
-	String cpf, String cargo, Double salario){
+	String cpf, String cargo, float salario){
 		//super();
 		this.nome = nome;
 	    this.endereco = endereco;
@@ -54,8 +54,8 @@ public class Colaborador {
 	    this.salario = salario;
 	}
 	
-	public Double calcularSalario(Folha_Pagamento folha) {
-		Double salario = this.salario;
+	public float calcularSalario(Folha_Pagamento folha) {
+		float salario = this.salario;
 	    for(Movimento movimento: folha.getMovimentos()){
 	      if(movimento.getColaborador().getid() == this.id){
 	        if(movimento.getMovimentoType() == MovimentoType.P){
@@ -69,8 +69,8 @@ public class Colaborador {
 	    return salario;
 	}
 
-	public Double getSalario() {
-		Double salario = calcularSalario(this.folha);
+	public float getSalario() {
+		float salario = calcularSalario(this.folha);
 		return salario;
 	}
 	
@@ -134,7 +134,7 @@ public class Colaborador {
 		this.cpf = cpf;
 	}
 
-	public void setSalario(Double salario) {
+	public void setSalario(float salario) {
 		this.salario = salario;
 	}
 

@@ -84,7 +84,7 @@ public class ColaboradorController {
 			String cep = (String)colab.get("cep");
 			String cpf = (String)colab.get("cpf");
 			String cargo = (String)colab.get("cargo");
-			Double salario = (Double)colab.get("salario");
+			float salario = (float)colab.get("salario");
 			List<String> errors = new ArrayList<String>();
 			
 			if(nome.isEmpty()) {
@@ -108,7 +108,7 @@ public class ColaboradorController {
 			if(cargo.isEmpty()) {
 				errors.add("Informe o cargo do funcionário!");
 			}
-			if(salario == null || salario <=0) {
+			if(salario <= 0) {
 				errors.add("Informe um salário válido para o funcionário!");
 			}
 
@@ -163,7 +163,7 @@ public class ColaboradorController {
 				String cep = (String)putColab.get("cep");
 				String cpf = (String)putColab.get("cpf");
 				String cargo = (String)putColab.get("cargo");
-				Double salario = (Double)putColab.get("salario");
+				float salario = (float)putColab.get("salario");
 				
 				if(nome.isEmpty()) {
 					errors.add("Informe o nome do funcionário!");
@@ -186,7 +186,7 @@ public class ColaboradorController {
 				if(cargo.isEmpty()) {
 					errors.add("Informe o cargo do funcionário!");
 				}
-				if(salario == null || salario <=0) {
+				if(salario <=0) {
 					errors.add("Informe um salário válido para o funcionário!");
 				}
 				
